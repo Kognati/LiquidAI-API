@@ -42,6 +42,7 @@ def generate(prompt: str = Query(..., description="User's input prompt")):
         return JSONResponse(content={"error": "Prompt cannot be empty"}, status_code=400)
 
     # Append user message
+    # http://127.0.0.1:8000/generate?prompt=Hello
     history.append({"role": "user", "content": prompt})
 
     # Generate assistant response
